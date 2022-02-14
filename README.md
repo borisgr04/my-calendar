@@ -1,10 +1,14 @@
 
 
 Installs  concat fs-extra
+````
 npm install --save-dev concat fs-extra
+````
 
 Build
+```` 
 npm run-script build:elements
+````
 
 https://rneto.es/blog/introduccion-angular-elements-web-components/
 
