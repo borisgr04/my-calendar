@@ -8,7 +8,7 @@ npm run-script build:elements
 
 https://rneto.es/blog/introduccion-angular-elements-web-components/
 
-
+```` html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,3 +54,4 @@ https://rneto.es/blog/introduccion-angular-elements-web-components/
     ></script>
   </body>
 </html>
+````
