@@ -1,27 +1,56 @@
-# MyCalendar
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
 
-## Development server
+Installs  concat fs-extra
+npm install --save-dev concat fs-extra
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Build
+npm run-script build:elements
 
-## Code scaffolding
+https://rneto.es/blog/introduccion-angular-elements-web-components/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>My calendar</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel='stylesheet' href='elements/0.0.0/my-calendar.css'>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    <script>
+      function initCalendar() {
+        // How to: select my-calendar
+        const myCalendar1 = document.querySelector('#calendario1');
 
-## Running unit tests
+        // How to: bind a event
+        myCalendar1.addEventListener('dateChanged', (event) => {
+          console.log(event);
+        });
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+         // How to: select my-calendar
+         const myCalendar2 = document.querySelector('#calendario2');
 
-## Running end-to-end tests
+        // How to: bind a event
+        myCalendar2.addEventListener('dateChanged', (event) => {
+            console.log(event);
+        });
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+      }
+    </script>
+  </head>
+  <body>
+    <my-calendar date="2022-02-02" id="calendario1" >
+      <span>My custom calendar content</span>
+    </my-calendar>
+    <br>
+    <my-calendar date="2025-02-02" id="calendario2" dateChanged="alert('Esta es prueba');" >
+        <span>Este es otro </span>
+    </my-calendar>
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    <script
+      src="elements/0.0.0/my-calendar.js"
+      defer onload="initCalendar();"
+    ></script>
+  </body>
+</html>
